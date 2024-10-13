@@ -31,7 +31,8 @@ module "my-ecr-repo" {
 
 ## information
 
-1. Time to create a cost-anomaly-detector is around 2 minutes.
+1. Time to create a ECR is around 30 sed.
+2. Tagged are referenced to images that their prefix is 'v'.
 
 ## License
 
