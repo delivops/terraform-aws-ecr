@@ -35,7 +35,7 @@ module "ecr" {
       },
       {
         rulePriority = 200,
-        description  = "Keep number of latest images",
+        description  = "Expire all tagged images that older than",
         selection = {
           tagStatus      = "tagged",
           tagPatternList = ["*"],
@@ -49,7 +49,7 @@ module "ecr" {
       },
       {
         rulePriority = 400,
-        description  = "Expire all older than",
+        description  = "Expire any images older than",
         selection = {
           tagStatus   = "any",
           countType   = "sinceImagePushed",
