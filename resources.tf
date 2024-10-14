@@ -25,23 +25,9 @@ module "ecr" {
         description  = "Keep number of latest tagged images",
         selection = {
           tagStatus     = "tagged",
-          tagPrefixList = ["v"],
+          tagPrefixList = [var.releases_prefix],
           countType     = "imageCountMoreThan",
-          countNumber   = var.keep_latest_count_tagged
-        },
-        action = {
-          type = "expire"
-        }
-      },
-      {
-        rulePriority = 300,
-        description  = "Expire all older tagged than",
-        selection = {
-          tagStatus      = "tagged",
-          tagPatternList = ["v*"],
-          countType      = "sinceImagePushed",
-          countUnit      = "days",
-          countNumber    = var.expire_days_tagged
+          countNumber   = var.releases_keep_count
         },
         action = {
           type = "expire"
@@ -53,8 +39,9 @@ module "ecr" {
         selection = {
           tagStatus      = "tagged",
           tagPatternList = ["*"],
-          countType      = "imageCountMoreThan",
-          countNumber    = var.keep_latest_count
+          countType      = "sinceImagePushed",
+          countUnit      = "days",
+          countNumber    = var.others_keep_days
         },
         action = {
           type = "expire"
@@ -67,7 +54,7 @@ module "ecr" {
           tagStatus   = "any",
           countType   = "sinceImagePushed",
           countUnit   = "days",
-          countNumber = var.expire_days
+          countNumber = var.others_keep_days
         },
         action = {
           type = "expire"

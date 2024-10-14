@@ -7,25 +7,20 @@ variable "mutability" {
   default = "MUTABLE"
 }
 
-variable "keep_latest_count" {
-  description = "Number of latest images to keep"
-  type        = number
-  default     = 90
+variable "releases_prefix" {
+  description = "Prefix of tagged images"
+  type        = string
+  default     = "v"
 }
 
-variable "expire_days" {
-  description = "Number of days before images expire"
-  type        = number
-  default     = 90
-}
-variable "keep_latest_count_tagged" {
+variable "releases_keep_count" {
   description = "Number of latest tagged images to keep"
   type        = number
-  default     = 90
+  default     = 30
 }
 
-variable "expire_days_tagged" {
-  description = "Number of days before tagged images expire"
+variable "others_keep_days" {
+  description = "Number of days before images expire"
   type        = number
   default     = 90
 }
