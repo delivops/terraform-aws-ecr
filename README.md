@@ -38,44 +38,41 @@ module "my-repo-name" {
 MIT
 
 <!-- BEGIN_TF_DOCS -->
-
 ## Requirements
 
 No requirements.
 
 ## Providers
 
-| Name                                             | Version |
-| ------------------------------------------------ | ------- |
-| <a name="provider_aws"></a> [aws](#provider_aws) | n/a     |
+| Name | Version |
+|------|---------|
+| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
 
 ## Modules
 
-| Name                                         | Source                        | Version |
-| -------------------------------------------- | ----------------------------- | ------- |
-| <a name="module_ecr"></a> [ecr](#module_ecr) | terraform-aws-modules/ecr/aws | 2.3.0   |
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_ecr"></a> [ecr](#module\_ecr) | terraform-aws-modules/ecr/aws | 2.3.0 |
 
 ## Resources
 
-| Name                                                                                                                                  | Type        |
-| ------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| Name | Type |
+|------|------|
 | [aws_availability_zones.available](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/availability_zones) | data source |
-| [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity)         | data source |
-| [aws_partition.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/partition)                     | data source |
+| [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
+| [aws_partition.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/partition) | data source |
 
 ## Inputs
 
-| Name                                                                                                      | Description                                | Type     | Default     | Required |
-| --------------------------------------------------------------------------------------------------------- | ------------------------------------------ | -------- | ----------- | :------: |
-| <a name="input_expire_days"></a> [expire_days](#input_expire_days)                                        | Number of days before images expire        | `number` | `90`        |    no    |
-| <a name="input_expire_days_tagged"></a> [expire_days_tagged](#input_expire_days_tagged)                   | Number of days before tagged images expire | `number` | `90`        |    no    |
-| <a name="input_keep_latest_count"></a> [keep_latest_count](#input_keep_latest_count)                      | Number of latest images to keep            | `number` | `90`        |    no    |
-| <a name="input_keep_latest_count_tagged"></a> [keep_latest_count_tagged](#input_keep_latest_count_tagged) | Number of latest tagged images to keep     | `number` | `90`        |    no    |
-| <a name="input_mutability"></a> [mutability](#input_mutability)                                           | n/a                                        | `string` | `"MUTABLE"` |    no    |
-| <a name="input_repository_name"></a> [repository_name](#input_repository_name)                            | n/a                                        | `string` | n/a         |   yes    |
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_mutability"></a> [mutability](#input\_mutability) | n/a | `string` | `"MUTABLE"` | no |
+| <a name="input_others_keep_days"></a> [others\_keep\_days](#input\_others\_keep\_days) | Number of days before images expire | `number` | `90` | no |
+| <a name="input_releases_keep_count"></a> [releases\_keep\_count](#input\_releases\_keep\_count) | Number of latest tagged images to keep | `number` | `30` | no |
+| <a name="input_releases_prefix"></a> [releases\_prefix](#input\_releases\_prefix) | Prefix of tagged images | `string` | `"v"` | no |
+| <a name="input_repository_name"></a> [repository\_name](#input\_repository\_name) | n/a | `string` | n/a | yes |
 
 ## Outputs
 
 No outputs.
-
 <!-- END_TF_DOCS -->
