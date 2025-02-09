@@ -67,10 +67,13 @@ No requirements.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_mutability"></a> [mutability](#input\_mutability) | n/a | `string` | `"MUTABLE"` | no |
-| <a name="input_others_keep_days"></a> [others\_keep\_days](#input\_others\_keep\_days) | Number of days before images expire | `number` | `90` | no |
+| <a name="input_others_keep_days"></a> [others\_keep\_days](#input\_others\_keep\_days) | Number of days before other tagged images expire | `number` | `30` | no |
+| <a name="input_protects_keep_count"></a> [protects\_keep\_count](#input\_protects\_keep\_count) | n/a | `number` | `999999` | no |
+| <a name="input_protects_prefix"></a> [protects\_prefix](#input\_protects\_prefix) | n/a | `list(string)` | <pre>[<br/>  "master",<br/>  "main"<br/>]</pre> | no |
 | <a name="input_releases_keep_count"></a> [releases\_keep\_count](#input\_releases\_keep\_count) | Number of latest tagged images to keep | `number` | `30` | no |
-| <a name="input_releases_prefix"></a> [releases\_prefix](#input\_releases\_prefix) | Prefix of tagged images | `string` | `"v"` | no |
+| <a name="input_releases_prefixes"></a> [releases\_prefixes](#input\_releases\_prefixes) | Prefix of tagged images | `list(string)` | <pre>[<br/>  "sha",<br/>  "v"<br/>]</pre> | no |
 | <a name="input_repository_name"></a> [repository\_name](#input\_repository\_name) | n/a | `string` | n/a | yes |
+| <a name="input_untagged_keep_days"></a> [untagged\_keep\_days](#input\_untagged\_keep\_days) | Number of days before untagged images expire | `number` | `1` | no |
 
 ## Outputs
 
