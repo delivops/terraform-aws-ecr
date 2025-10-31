@@ -1,6 +1,6 @@
 module "ecr" {
   source  = "terraform-aws-modules/ecr/aws"
-  version = "2.3.0"
+  version = "3.1.0"
 
   repository_name                 = var.repository_name
   repository_image_tag_mutability = var.mutability
