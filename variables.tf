@@ -1,21 +1,24 @@
 variable "repository_name" {
-  type = string
+  description = "Name of the ECR repository"
+  type        = string
 }
 
 variable "mutability" {
-  type    = string
-  default = "MUTABLE"
+  description = "Image tag mutability setting (MUTABLE or IMMUTABLE)"
+  type        = string
+  default     = "MUTABLE"
 }
 
 variable "protects_prefix" {
-  type    = list(string)
-  default = ["master", "main"]
+  description = "Tag prefixes to protect from lifecycle expiration"
+  type        = list(string)
+  default     = ["master", "main"]
 }
 
 variable "protects_keep_count" {
-  type    = number
-  default = 999999
-
+  description = "Number of images to retain for protected prefixes"
+  type        = number
+  default     = 999999
 }
 
 variable "releases_prefixes" {
@@ -29,15 +32,39 @@ variable "releases_keep_count" {
   type        = number
   default     = 30
 }
+
 variable "others_keep_days" {
   description = "Number of days before other tagged images expire"
   type        = number
   default     = 30
-
 }
+
 variable "untagged_keep_days" {
   description = "Number of days before untagged images expire"
   type        = number
   default     = 1
+}
 
+variable "scan_on_push" {
+  description = "Enable image scanning on push"
+  type        = bool
+  default     = true
+}
+
+variable "tags" {
+  description = "A map of tags to add to the ECR repository"
+  type        = map(string)
+  default     = {}
+}
+
+variable "create_repository_policy" {
+  description = "Whether to create a repository policy"
+  type        = bool
+  default     = false
+}
+
+variable "repository_policy" {
+  description = "The JSON policy to apply to the repository (required if create_repository_policy is true)"
+  type        = string
+  default     = null
 }
