@@ -77,9 +77,9 @@ No resources.
 | <a name="input_mutability"></a> [mutability](#input\_mutability) | Image tag mutability setting (MUTABLE or IMMUTABLE) | `string` | `"MUTABLE"` | no |
 | <a name="input_others_keep_days"></a> [others\_keep\_days](#input\_others\_keep\_days) | Number of days before other tagged images expire | `number` | `30` | no |
 | <a name="input_protects_keep_count"></a> [protects\_keep\_count](#input\_protects\_keep\_count) | Number of images to retain for protected prefixes | `number` | `999999` | no |
-| <a name="input_protects_prefix"></a> [protects\_prefix](#input\_protects\_prefix) | Tag prefixes to protect from lifecycle expiration | `list(string)` | <pre>[<br>  "master",<br>  "main"<br>]</pre> | no |
+| <a name="input_protects_prefix"></a> [protects\_prefix](#input\_protects\_prefix) | Tag prefixes to protect from lifecycle expiration | `list(string)` | <pre>[<br/>  "master",<br/>  "main"<br/>]</pre> | no |
 | <a name="input_releases_keep_count"></a> [releases\_keep\_count](#input\_releases\_keep\_count) | Number of latest tagged images to keep | `number` | `30` | no |
-| <a name="input_releases_prefixes"></a> [releases\_prefixes](#input\_releases\_prefixes) | Prefix of tagged images | `list(string)` | <pre>[<br>  "sha",<br>  "v"<br>]</pre> | no |
+| <a name="input_releases_prefixes"></a> [releases\_prefixes](#input\_releases\_prefixes) | Prefix of tagged images | `list(string)` | <pre>[<br/>  "sha",<br/>  "v"<br/>]</pre> | no |
 | <a name="input_repository_name"></a> [repository\_name](#input\_repository\_name) | Name of the ECR repository | `string` | n/a | yes |
 | <a name="input_repository_policy"></a> [repository\_policy](#input\_repository\_policy) | The JSON policy to apply to the repository (required if create\_repository\_policy is true) | `string` | `null` | no |
 | <a name="input_scan_on_push"></a> [scan\_on\_push](#input\_scan\_on\_push) | Enable image scanning on push | `bool` | `true` | no |
