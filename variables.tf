@@ -67,4 +67,9 @@ variable "repository_policy" {
   description = "The JSON policy to apply to the repository (required if create_repository_policy is true)"
   type        = string
   default     = null
+
+  validation {
+    condition     = !var.create_repository_policy || var.repository_policy != null
+    error_message = "repository_policy must be provided when create_repository_policy is true."
+  }
 }

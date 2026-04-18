@@ -1,13 +1,13 @@
 module "ecr" {
   source  = "terraform-aws-modules/ecr/aws"
-  version = "2.4.0"
+  version = "3.2.0"
 
-  repository_name                   = var.repository_name
-  repository_image_tag_mutability   = var.mutability
-  repository_image_scan_on_push     = var.scan_on_push
-  attach_repository_policy          = var.create_repository_policy
-  repository_policy                 = var.repository_policy
-  tags                              = var.tags
+  repository_name                 = var.repository_name
+  repository_image_tag_mutability = var.mutability
+  repository_image_scan_on_push   = var.scan_on_push
+  attach_repository_policy        = var.create_repository_policy
+  repository_policy               = var.repository_policy
+  tags                            = var.tags
 
   repository_lifecycle_policy = jsonencode({
     rules = concat(

@@ -23,7 +23,7 @@ provider "aws" {
 
 module "my-repo-name" {
   source  = "delivops/ecr/aws"
-  version = "x.x.x"
+  version = "~> 1.0"
 
   repository_name     = "my-app"
   releases_prefixes   = ["v", "release"]
@@ -53,7 +53,7 @@ MIT
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 6.0 |
 
 ## Providers
 
@@ -63,7 +63,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_ecr"></a> [ecr](#module\_ecr) | terraform-aws-modules/ecr/aws | 2.4.0 |
+| <a name="module_ecr"></a> [ecr](#module\_ecr) | terraform-aws-modules/ecr/aws | 3.2.0 |
 
 ## Resources
 
