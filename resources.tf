@@ -5,6 +5,7 @@ module "ecr" {
   repository_name                 = var.repository_name
   repository_image_tag_mutability = var.mutability
   attach_repository_policy        = false
+  tags                            = var.tags
   repository_lifecycle_policy = jsonencode({
     rules = concat(
       [

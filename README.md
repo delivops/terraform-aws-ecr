@@ -48,7 +48,7 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 6.62.0 |
 
 ## Modules
 
@@ -75,6 +75,7 @@ No requirements.
 | <a name="input_releases_keep_count"></a> [releases\_keep\_count](#input\_releases\_keep\_count) | Number of latest tagged images to keep | `number` | `100` | no |
 | <a name="input_releases_prefixes"></a> [releases\_prefixes](#input\_releases\_prefixes) | Prefix of tagged images | `list(string)` | <pre>[<br/>  "sha",<br/>  "v"<br/>]</pre> | no |
 | <a name="input_repository_name"></a> [repository\_name](#input\_repository\_name) | n/a | `string` | n/a | yes |
+| <a name="input_tags"></a> [tags](#input\_tags) | A map of tags to assign to the ECR repository | `map(string)` | `{}` | no |
 | <a name="input_untagged_keep_days"></a> [untagged\_keep\_days](#input\_untagged\_keep\_days) | Number of days before untagged images expire | `number` | `30` | no |
 
 ## Outputs

@@ -40,3 +40,9 @@ variable "untagged_keep_days" {
   type        = number
   default     = 30
 }
+
+variable "tags" {
+  description = "A map of tags to assign to the ECR repository"
+  type        = map(string)
+  default     = {}
+}
